@@ -1,101 +1,132 @@
-import Image from "next/image";
+import FeaturedProducts from "@/components/FeaturedProducts";
+import Hero from "@/components/Hero";
+import Sponsors from "@/components/Sponsors";
+import oldChair from "../../public/oldChair.jpeg";
+import PinkSofa from "../../public/sofa_pink_1.png";
+import chair2 from "../../public/chair2.png";
+import sofa2 from "../../public/sofa2.png";
+import TopCategories from "@/components/TopCategories";
+import PopularStyles from "@/components/PopularStyles";
+import OurProduct from "@/components/OurProduct";
+// import { StaticImageData } from "next/image";
+
+
+// interface ImageProps { 
+//   src: StaticImageData; 
+//   alt: string; 
+//   width: number; 
+//   height: number; 
+// }
+// interface CardBuildItem { 
+//   id: number; 
+//   heading?: string; 
+//   divText: string; 
+//   Image1: ImageProps; 
+//   paragraph: string; 
+//   classNamepara?: string; 
+//   amount: number; 
+//   cutamount?: number; 
+//   classNameCart?: string; 
+//   isDiv: boolean; 
+//   className?: string; 
+//   classNameDiv?: string; }
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    const cardBuild = [
+      {
+        id:1,
+        heading:"Featured Products",
+        divText:"New",
+        Image1:{
+          src: oldChair,
+          alt:"oldChair",
+          Width: 312,
+          height: 312
+        },
+        paragraph: "Library Stool Chair",
+        classNamepara:"text-[#007580]",
+        amount: 20,
+        classNameCart:"bg-[#029FAE]",
+        isDiv:true,
+      },
+       {
+        id:2,
+        divText:"sales",
+        classNameDiv:"bg-[#F5813F]",
+        Image1:{
+          src: PinkSofa,
+          alt:"Sofa Pink",
+          Width: 312,
+          height: 312
+        },
+        paragraph: "Library Stool Chair",
+        classNamepara: "text-[#272343]",
+        amount:20,
+        cutamount:39,
+        classNameCart:"bg-gray-300",
+        isDiv:true,
+        className:"relative top-[40px]"
+      },
+      {
+        id:3,
+        Image1:{
+          src: chair2,
+          alt:"chair2",
+          Width: 312,
+          height: 312
+        },
+        paragraph: "Library Stool Chair",
+        classNamepara: "text-[#272343]",
+        amount:20,
+        classNameCart:"bg-gray-300",
+        isDiv:false,
+        className:"relative top-[70px]"
+      },
+      {
+        id:4,
+        Image1:{
+          src: sofa2,
+          alt:"sofa2",
+          Width: 312,
+          height: 312
+        },
+        paragraph: "Library Stool Chair",
+        classNamepara: "text-[#272343]",
+        amount:20,
+        classNameCart:"bg-gray-300",
+        isDiv:false,
+        className:"relative top-[70px]"
+      },
+    ]
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+
+  return (
+   <div>
+      <Hero/>
+      <Sponsors/>
+      <div className="flex flex-wrap xl:flex-nowrap object-cover">
+      {cardBuild.map((elem)=>{
+        return(
+          <FeaturedProducts
+          key={elem.id}
+          heading={elem.heading}
+          divText={elem.divText}
+          Image1={elem.Image1}
+          paragraph={elem.paragraph}
+          amount= {elem.amount}
+          classNameDiv={elem.classNameDiv}
+          classNamepara={elem.classNamepara}
+          cutamount={elem.cutamount}
+          classNameCart={elem.classNameCart}
+          isDiv={elem.isDiv}
+          className={elem.className}
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+        )
+      })}
+      </div>
+      <TopCategories/>
+      <PopularStyles/>
+      <OurProduct/>
+   </div>
   );
 }
