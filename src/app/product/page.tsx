@@ -20,7 +20,7 @@ const AllProductpage = () => {
         <h1 className="font-inter text-[32px] leading-[35.2px] font-semibold mt-8 text-[#272343]">
           All Products
         </h1>
-        <div className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-4 gap-y-6 gap-x-[30px] px-4 ">
+        <div className="grid grid-cols-1 md:grid-cols-2 md:grid-rows-2 lg:grid-cols-3 lg:grid-rows-3 xl:grid-cols-4 xl:grid-rows-4 gap-y-6 gap-x-[30px] px-4 ">
           <div className="w-full max-w-[358px] h-[312px]">
             <div className="product-card bg-white rounded-lg p-4">
               <div className="relative">
@@ -135,7 +135,6 @@ const AllProductpage = () => {
                   />
                 </div>
               </div>
-
               <div className="flex justify-between items-center mt-4">
                 <div>
                   <p className="text-[#007580] text-sm md:text-base">
@@ -152,6 +151,8 @@ const AllProductpage = () => {
               </div>
             </div>
           </div>
+
+          
           <div className="w-full max-w-[358px] h-[312px]">
             <div className="product-card bg-white rounded-lg p-4">
               <div className="relative">
@@ -182,6 +183,7 @@ const AllProductpage = () => {
               </div>
             </div>
           </div>
+          
           <div className="w-full max-w-[358px] h-[312px]">
             <div className="product-card bg-white rounded-lg p-4">
               <div className="relative">
@@ -215,6 +217,7 @@ const AllProductpage = () => {
               </div>
             </div>
           </div>
+          
           <div className="w-full max-w-[358px] h-[312px]">
             <div className="product-card bg-white rounded-lg p-4">
               <div className="relative">
@@ -248,6 +251,8 @@ const AllProductpage = () => {
               </div>
             </div>
           </div>
+
+
           <div className="w-full max-w-[358px] h-[312px]">
             <div className="product-card bg-white rounded-lg p-4">
               <div className="relative">
@@ -427,28 +432,26 @@ const AllProductpage = () => {
     </h1>
     <div className="flex flex-col sm:flex-row gap-4 sm:gap-2 justify-between items-center w-full max-w-[643px] px-2">
       <div className="flex flex-col w-full sm:w-[80%]">
-        <p className="font-roboto font-semibold text-base leading-[18.75px] text-[#1E283280]">
-          Email address...
-        </p>
+        <input className="font-roboto font-semibold text-base leading-[18.75px] h-10 text-[#1E283280]" placeholder=" Email address..."/>
         <div className="w-full h-[2px] bg-[#000000]" />
       </div>
-      <p className="font-sans font-normal text-base leading-[21.79px] text-[#1E2832] underline border-b-2 border-[#000000] cursor-pointer whitespace-nowrap">
-        SUBMIT
-      </p>
+      <button className="font-sans font-normal text-base leading-[21.79px] text-[#1E2832] border-b-2 border-[#000000] cursor-pointer whitespace-nowrap">
+      SUBMIT
+      </button>
     </div>
-    <div className="flex flex-col items-center w-full px-2">
+    <div className="flex flex-col items-center w-full px-2 gap-y-8">
       <h1 className="font-roboto font-medium text-2xl sm:text-3xl md:text-4xl lg:text-[50px] leading-tight sm:leading-[58.59px] text-[#000000] pt-6 sm:pt-10 text-center">
         Follow products and discounts on Instagram
       </h1>
       <div className="my-4 w-full grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 place-items-center">
         {[table2, seat3, pnik_sofa, chair2, chairPopular, chair2Pro].map((image, index) => (
-          <div key={index} className="relative w-[186px] h-[186px] flex-shrink-0">
+          <div key={index} className="relative max-w-[186px] max-h-[186px] flex-shrink-0">
             <Image 
               src={image} 
               alt={`product-${index}`} 
               width={186} 
               height={186} 
-              className="object-cover"
+              className="object-cover max-w-[200px] max-h-[200px]"
               layout="responsive"
             />
           </div>

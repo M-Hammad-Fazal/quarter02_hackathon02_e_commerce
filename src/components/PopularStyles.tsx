@@ -6,11 +6,14 @@ import seatpopular from "../../public/seat(1).png";
 
 const PopularStyles = () => {
   return (
-    <div className="mx-auto max-w-7xl mb-20">
-        <h1 className="font-roboto font-normal text-[34px] leading-[39.84px] mb-20 pl-10 md:pl-0">
-        Explore new and popular styles
+    <div className="mx-auto max-w-7xl mb-20 flex pl-4">
+        <h1 style={{ writingMode: 'vertical-rl' }}  className="font-roboto font-normal text-[34px] leading-[39.84px] mb-20 md:pl-0 rotate-180  hidden lg:block">
+        EXPLORE NEW AND POPULAR STYLES
         </h1>
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 h-screen p-4">
+        <h1 style={{ writingMode: 'vertical-rl' }} className="font-roboto font-normal text-[34px] leading-[39.84px] mb-20 md:pl-0  block lg:hidden">
+        EXPLORE NEW AND POPULAR STYLES
+        </h1>
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
         {/* First box spanning 2 rows on larger screens */}
         <div className="sm:row-span-2 transition duration-300 hover:scale-105">
             <Image 
@@ -65,3 +68,5 @@ const PopularStyles = () => {
 }
 
 export default PopularStyles
+
+

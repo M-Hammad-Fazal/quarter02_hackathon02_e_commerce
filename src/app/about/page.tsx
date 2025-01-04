@@ -95,11 +95,11 @@ const AboutPage = () => {
         </h1>
         <div className="flex flex-col gap-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-4 overflow-hidden">
               <Image
                 src={sofa3}
                 alt="sofa3"
-                className="w-full h-auto object-cover"
+                className="max-w-[630px] max-h-[375px] object-cover"
               />
               <p className="font-inter text-xl font-normal leading-7 text-[#2A254B]">
                 The Poplar suede sofa
@@ -109,11 +109,11 @@ const AboutPage = () => {
               </p>
             </div>
 
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-4 pl-8">
               <Image
                 src={parent}
                 alt="parent"
-                className="w-full h-auto object-cover"
+                className="max-w-[305px] max-h-[375px] object-cover"
               />
               <p className="font-inter text-xl font-normal leading-7 text-[#2A254B]">
                 The Dandy chair
@@ -123,11 +123,11 @@ const AboutPage = () => {
               </p>
             </div>
 
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-4 ">
               <Image
                 src={parent1}
                 alt="parent1"
-                className="w-full h-auto object-cover"
+                className="max-w-[305px] max-h-[375px] object-cover"
               />
               <p className="font-inter text-xl font-normal leading-7 text-[#2A254B]">
                 The Dandy chair

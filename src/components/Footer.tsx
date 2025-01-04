@@ -17,7 +17,7 @@ const Footer = () => {
   return (
     <div className="w-full px-4 md:px-6 lg:px-8 ">
       <div className="h-[2px] bg-[#E1E3E5] w-full mb-10 md:mb-20"/>
-      <div className="mx-auto max-w-7xl flex flex-col md:flex-row justify-between md:flex-wrap 2xl:flex-nowrap items-start md:items-center gap-10 md:gap-4">
+      <div className="mx-auto max-w-5xl xl:max-w-7xl flex flex-col md:flex-row justify-between md:flex-wrap 2xl:flex-nowrap items-start md:items-center gap-10 md:gap-4">
         <div className="Logo-div flex flex-col gap-6 w-full md:w-auto">
           <div className="flex items-center gap-2">
             <Image
@@ -66,7 +66,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 w-full md:w-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full md:w-auto">
           <div className="flex flex-col gap-4">
             <h1 className="footer-title font-inter font-normal text-sm leading-[15.4px] tracking-[6%] text-[#9A9CAA]">
               Category
@@ -111,7 +111,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="h-[2px] bg-[#E1E3E5] w-full mt-10 md:mt-36"/>
+      <div className="h-[2px] bg-[#E1E3E5] w-full mt-10 md:mt-20"/>
       
       <div className="mx-auto max-w-7xl py-6">
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
