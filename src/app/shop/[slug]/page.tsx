@@ -19,18 +19,18 @@ export interface IProduct {
 
 
 
-const Productpage = async ({params}:{params:Promise<{slug:string}>}) => {
-  const slug = (await params).slug
+const Productpage = () => {
+  // const slug = (await params).slug
   
-const data: IProduct[] = [
-  {
-  slug: `${slug}`,
-  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tincidunt erat enim. Lorem ipsum dolor sit amet, consectetur adipiscing",
-  image: PinkSofa ,
-  title: "Library Stool Chair",
-  price:  "$20.00 USD",
-  },
-]
+// const data: IProduct[] = [
+//   {
+//   slug: `${slug}`,
+//   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tincidunt erat enim. Lorem ipsum dolor sit amet, consectetur adipiscing",
+//   image: PinkSofa ,
+//   title: "Library Stool Chair",
+//   price:  "$20.00 USD",
+//   },
+// ]
 
   return (
     
@@ -47,7 +47,7 @@ const data: IProduct[] = [
         </div>
         <div className="flex flex-col gap-6 lg:gap-8 w-full lg:w-1/2">
           <h1 className="font-inter font-bold text-3xl md:text-4xl lg:text-[60px] leading-tight text-[#272343]">
-            Library Stool Chair
+          
           </h1>
           <div className="w-36 h-12 rounded-[100px] flex items-center justify-center bg-[#029FAE] hover:bg-[#01656e]">
             <button className="text-[#FFFFFF] font-inter font-semibold text-xl leading-[22px]">
