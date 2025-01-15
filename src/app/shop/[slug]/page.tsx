@@ -1,17 +1,39 @@
-import Image from "next/image";
-import PinkSofa from "../../../public/PinkSoFa.png";
+import Image, { StaticImageData } from "next/image";
+import PinkSofa from "../../../../public/PinkSoFa.png";
 import { ShoppingCart } from "lucide-react";
-import pillow from "../../../public/pilow.png";
-import chair2Pro from "../../../public/chair2popular.png";
-import chair3Pro from "../../../public/chair2Pro.jpg";
-import chair4Pro from "../../../public/yellowChair.png";
-import chair5Pro from "../../../public/lastPro.png";
+import pillow from "../../../../public/pilow.png";
+import chair2Pro from "../../../../public/chair2popular.png";
+import chair3Pro from "../../../../public/chair2Pro.jpg";
+import chair4Pro from "../../../../public/yellowChair.png";
+import chair5Pro from "../../../../public/lastPro.png";
 import Link from "next/link";
 
 
+export interface IProduct {
+  slug:string;
+  description: string;
+  image: StaticImageData;
+  title: string;
+  price: string;
+}
 
-const Productpage = () => {
+
+
+const Productpage = async ({params}:{params:Promise<{slug:string}>}) => {
+  const slug = (await params).slug
+  
+const data: IProduct[] = [
+  {
+  slug: `${slug}`,
+  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tincidunt erat enim. Lorem ipsum dolor sit amet, consectetur adipiscing",
+  image: PinkSofa ,
+  title: "Library Stool Chair",
+  price:  "$20.00 USD",
+  },
+]
+
   return (
+    
     <div className="container mx-auto px-4 max-w-7xl flex flex-col gap-4">
       <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 mb-2 lg:mb-28">
         <div className="w-full lg:w-1/2">
@@ -38,8 +60,8 @@ const Productpage = () => {
           </p>
           <div className="w-full sm:w-[212px] h-[63px] rounded-[8px] px-2 py-[14px] bg-[#029FAE] flex items-center justify-center hover:scale-105 hover:bg-[#0e5f66]">
             <Link href="/cart" className="flex text-[#FFFFFF] font-inter font-semibold text-xl leading-[22px] items-center justify-center">
-              <ShoppingCart width={80} height={22}/>
-              <span>Add To cart</span>
+              <ShoppingCart width={40} height={22}/>
+              <span className="text-xl">Add To cart</span>
             </Link>
           </div>
         </div>
